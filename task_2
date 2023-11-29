@@ -1,0 +1,46 @@
+void main() {
+  List<int> numbers = [5, 10, 15, 20, 25];
+
+  int maxNumber = findMaxmum(numbers);
+  int minNumber = findMinmum(numbers);
+  int sum = calculateSum(numbers);
+  double average = calculateAverage(numbers);
+
+  print('Maximum number: $maxNumber');
+  print('Minimum number: $minNumber');
+  print('Sum of all numbers: $sum');
+  print('Average of all numbers: $average');
+}
+
+int findMaxmum(List<int> numbers) {
+  int max = numbers[0];
+  for (int i = 1; i < numbers.length; i++) {
+    if (numbers[i] > max) {
+      max = numbers[i];
+    }
+  }
+  return max;
+}
+
+int findMinmum(List<int> numbers) {
+  int min = numbers[0];
+  for (int i = 1; i < numbers.length; i++) {
+    if (numbers[i] < min) {
+      min = numbers[i];
+    }
+  }
+  return min;
+}
+
+int calculateSum(List<int> numbers) {
+  int sum = 0;
+  for (int number in numbers) {
+    sum += number;
+  }
+  return sum;
+}
+
+double calculateAverage(List<int> numbers) {
+  int sum = calculateSum(numbers);
+  return sum / numbers.length;
+}
