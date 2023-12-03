@@ -1,0 +1,60 @@
+import 'dart:async';
+
+class Calculator {
+  double add(double a, double b) {
+    return a + b;
+  }
+
+  double subtract(double a, double b) {
+    return a - b;
+  }
+
+  double divide(double a, double b) {
+    if (b == 0) {
+      throw Exception('Cannot divide by zero');
+    }
+    return a / b;
+  }
+
+  double multiply(double a, double b) {
+    return a * b;
+  }
+}
+
+void main() async {
+  Calculator calculator = Calculator();
+
+  try {
+    double result =   calculator.multiply(10, 0);
+    await Future.delayed(Duration(seconds: 5));
+    print('Result: $result');
+  } catch (e) {
+    await Future.delayed(Duration(seconds: 5));
+    print('Error: ${e.toString()}');
+  }
+  try{
+  double result =   calculator.divide(10, 0);
+    await Future.delayed(Duration(seconds: 5));
+    print('Result: $result');
+  } catch (e) {
+    await Future.delayed(Duration(seconds: 5));
+    print('Error: ${e.toString()}');
+  }
+  try{
+double result =   calculator.add(10, 15);
+    await Future.delayed(Duration(seconds: 5));
+    print('Result: $result');
+  } catch (e) {
+    await Future.delayed(Duration(seconds: 5));
+    print('Error: ${e.toString()}');
+  }
+  try{
+double result =   calculator.subtract(10, 12);
+    await Future.delayed(Duration(seconds: 5));
+    print('Result: $result');
+  } catch (e) {
+    await Future.delayed(Duration(seconds: 5));
+    print('Error: ${e.toString()}');
+  }
+  
+}
